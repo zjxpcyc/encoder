@@ -1,6 +1,6 @@
 # Encoder 简单的加解密
 
-![](https://img.shields.io/badge/current-v0.0.1-blue.svg)
+![](https://img.shields.io/badge/golang-v0.0.2-blue.svg)
 
 总结了下，常用的简单加解密(散列)方法
 

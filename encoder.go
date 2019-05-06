@@ -19,7 +19,7 @@ func Base64(plaintext []byte) string {
 
 // MD5 加密
 func MD5(plaintext []byte, salt ...string) string {
-	text := plaintext
+	text := dup(plaintext)
 
 	if len(salt) > 0 && salt[0] != "" {
 		for _, s := range salt {
@@ -85,4 +85,10 @@ func PKCS7Padding(plaintext []byte, blockSize int) []byte {
 
 	padtext := bytes.Repeat([]byte{byte(padding)}, padding)
 	return append(plaintext, padtext...)
+}
+
+func dup(s []byte) []byte {
+	t := make([]byte, len(s))
+	copy(t, s)
+	return t
 }

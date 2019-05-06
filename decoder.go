@@ -20,7 +20,7 @@ func AESCBCDecrypt(ciphertext, key, iv []byte) ([]byte, error) {
 	}
 
 	// 使用拷贝数据, 目的是不改变 ciphertext
-	text := ciphertext
+	text := dup(ciphertext)
 
 	mode := cipher.NewCBCDecrypter(block, iv)
 	mode.CryptBlocks(text, text)
